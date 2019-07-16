@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.inventory.ItemStack;
 
-public abstract class VehicleEntity {
+public class VehicleEntity {
 
     private ArmorStand as;
 
@@ -30,6 +30,10 @@ public abstract class VehicleEntity {
         }else{
             return false;
         }
+    }
+
+    public ArmorStand getEntity(){
+        return as;
     }
 
 }

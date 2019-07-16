@@ -4,6 +4,7 @@ Door: Maiky
 Package: me.Maiky1304.treelife.modules.vehicles.listeners in de class VehicleInteractEvent.
 */
 
+import me.Maiky1304.treelife.modules.vehicles.interfaces.VehicleEntity;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.ArmorStand;
@@ -22,7 +23,9 @@ public class VehicleInteractEvent implements Listener {
             ArmorStand armorStand = (ArmorStand) e.getRightClicked();
             Player player = e.getPlayer();
 
-            if (armorStand.getHelmet().getType() == Material.DIAMOND_HOE){
+            VehicleEntity vehicle = new VehicleEntity(armorStand);
+
+            if (vehicle.isCar()){
                 e.setCancelled(true);
                 if (player.isSneaking()){
                     // TODO: Send player a message and tell him that he tried to interact with a car
