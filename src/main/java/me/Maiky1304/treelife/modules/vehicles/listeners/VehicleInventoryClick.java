@@ -22,7 +22,7 @@ public class VehicleInventoryClick implements Listener {
             // Setup item and data
             ItemStack item = e.getCurrentItem();
             ItemMeta meta = item.getItemMeta();
-            meta.setDisplayName(ChatColor.BLUE + meta.getDisplayName());
+            meta.setDisplayName(meta.getDisplayName());
             meta.setLore(Arrays.asList(" ", "§6Voertuig ID: §e" + UUID.randomUUID().toString()));
             item.setItemMeta(meta);
 

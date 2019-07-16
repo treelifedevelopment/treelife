@@ -5,6 +5,7 @@ Package: me.Maiky1304.treelife.modules.vehicles in de class VehicleModule.
 */
 
 import me.Maiky1304.treelife.main.Main;
+import me.Maiky1304.treelife.modules.config.ConfigHandler;
 import me.Maiky1304.treelife.modules.interfaces.MinetopiaModule;
 import me.Maiky1304.treelife.modules.manager.CommandManager;
 import me.Maiky1304.treelife.modules.vehicles.commands.VehicleAdminCommand;
@@ -18,6 +19,9 @@ import org.bukkit.plugin.PluginManager;
 public class VehicleModule implements MinetopiaModule {
 
     private Main plugin = Main.getPlugin(Main.class);
+
+    // Config
+    public static ConfigHandler vehicles = new ConfigHandler("vehicles.yml");
 
     public VehicleModule(){
     }
@@ -37,6 +41,9 @@ public class VehicleModule implements MinetopiaModule {
         CommandManager manager = new CommandManager();
         manager.register(vehiclesCommand.getCommand(), vehiclesCommand);
         manager.register(vehiclesAdminCommand.getCommand(), vehiclesAdminCommand);
+
+        // Load configs
+        vehicles.loadConfig();
     }
 
     @Override

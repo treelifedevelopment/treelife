@@ -34,9 +34,17 @@ public class VehicleInteractEvent implements Listener {
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                 "&6Je hebt &e" + ChatColor.stripColor(armorStand.getHelmet().getItemMeta().getDisplayName())  + " &6opgepakt!"));
                         armorStand.remove();
+                    }else{
+                        player.sendMessage(ChatColor.RED + "Dit is niet jouw voertuig.");
                     }
                 }else{
-                    player.sendMessage(ChatColor.RED + "Dit is niet jouw voertuig.");
+                    if (player.hasPermission("treelife.admin.entervehicles")) {
+                        if (vehicle.getEntity().getPassenger() == null) {
+                            vehicle.getEntity().setPassenger(player);
+                        }
+                    }else{
+                        player.sendMessage(ChatColor.RED + "Dit is niet jouw voertuig.");
+                    }
                 }
             }
         }

@@ -6,8 +6,6 @@ Package: me.Maiky1304.treelife.modules.manager in de class ModuleManager.
 
 import me.Maiky1304.treelife.main.Main;
 import me.Maiky1304.treelife.modules.vehicles.VehicleModule;
-import me.Maiky1304.treelife.modules.vehicles.commands.VehicleAdminCommand;
-import me.Maiky1304.treelife.modules.vehicles.commands.VehicleCommand;
 
 public class ModuleManager{
 

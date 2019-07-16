@@ -49,6 +49,17 @@ public class VehicleAdminCommand extends CommandModule {
                         item.setItemMeta(meta);
 
                         inventory.addItem(item);
+
+                        //Rode auto
+
+                        ItemStack item2 = new ItemStack(Material.DIAMOND_HOE, 1, (short)1017);
+                        ItemMeta meta2 = item2.getItemMeta();
+                        meta2.setDisplayName("Rode Auto");
+                        meta2.setUnbreakable(true);
+                        meta2.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+                        item2.setItemMeta(meta2);
+
+                        inventory.addItem(item2);
                         player.openInventory(inventory);
                         break;
                 }

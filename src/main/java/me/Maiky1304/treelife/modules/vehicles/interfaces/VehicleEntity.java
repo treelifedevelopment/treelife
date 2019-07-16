@@ -4,9 +4,12 @@ Door: Maiky
 Package: me.Maiky1304.treelife.modules.vehicles.interfaces in de class VehicleEntity.
 */
 
+import me.Maiky1304.treelife.modules.vehicles.VehicleModule;
 import org.bukkit.Material;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.List;
 
 public class VehicleEntity {
 
@@ -30,6 +33,28 @@ public class VehicleEntity {
         }else{
             return false;
         }
+    }
+
+    public List<String> getOwners(){
+        if (!isCar()){
+            return null;
+        }
+
+        return VehicleModule.vehicles
+                .getConfig().getStringList("vehicles." + getVehicleID() + ".owners");
+    }
+
+    public List<String> getMembers(){
+        if (!isCar()){
+            return null;
+        }
+
+        return VehicleModule.vehicles
+                .getConfig().getStringList("vehicles." + getVehicleID() + ".members");
+    }
+
+    public void despawn(){
+        as.remove();
     }
 
     public ArmorStand getEntity(){
