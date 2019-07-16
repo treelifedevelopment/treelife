@@ -1,0 +1,11 @@
+name: Treelife_Core
+version: 1.0-SNAPSHOT
+main: me.Maiky1304.treelife.main.Main
+api-version: 1.13
+authors: [Maiky1304]
+website: https://www.minetitan.nl
+commands:
+  vehicle:
+    description: Hiermee kun je de voertuigen beheren.
+  vehicleadmin:
+    description: Admin commando voor vehicle
